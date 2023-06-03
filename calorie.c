@@ -1,14 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <strings.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 int main() {
   FILE *fp;
   char buf[100];
   int max, secondMax, thirdMax, curr = 0;
-  char* len = 0;
-
+  char *len = 0;
 
   fp = fopen("./input.txt", "r");
 
@@ -19,12 +18,10 @@ int main() {
       thirdMax = secondMax;
       secondMax = max;
       max = curr;
-    }
-    else if (curr > secondMax) {
+    } else if (curr > secondMax) {
       thirdMax = secondMax;
       secondMax = curr;
-    }
-    else if (curr > thirdMax) {
+    } else if (curr > thirdMax) {
       thirdMax = curr;
     }
     if (strlen(buf) == 1 || strlen(buf) == 0) {
@@ -49,4 +46,3 @@ _Bool isNewBag(char c) {
     return 1;
   return 0;
 }
-
